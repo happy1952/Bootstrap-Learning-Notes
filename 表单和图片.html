@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap CSS —— 表单和图片</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="margin: 50px;">
+    
+    <!-- 基本表单 -->
+    <form role="form">
+      <div class="form-group">
+        <label for="username">用户名</label>
+        <input class="form-control" id="username" type="text" name="username" placeholder="请输入用户名...">
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input class="form-control" id="password" type="password" name="password" placeholder="请输入用户密码...">
+      </div>
+      <div class="form-group">
+        <label for="inputfile">文件上传</label>
+        <input id="inputfile" type="file" name="inputfile">
+        <P class="help-block">这是块级帮助文本的实例！</P>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input class="checkbox" type="checkbox" name="agree" value="1">已同意
+        </label>
+      </div>
+      <input class="btn btn-default" type="button" value="登录">
+    </form><br>
+    
+    <!-- 内联表单(当小于768px，会恢复独占样式) -->
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <label for="username">用户名</label>
+        <input class="form-control" id="username" type="text" name="username" placeholder="请输入用户名...">
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input class="form-control" id="password" type="password" name="password" placeholder="请输入用户密码...">
+      </div>
+    </form><br>
+
+    <!-- 水平表单 -->
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="username">用户名</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="username" type="text" name="username" placeholder="请输入用户名...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="password">密码</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="password" type="password" name="password" placeholder="请输入用户密码...">
+        </div>
+      </div>
+    </form><br>
+
+    <!-- 表单合组 -->
+    <form role="form">
+      <!-- has-feedback 定位图标 -->
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="goodsname">商品名</label>
+        <input class="form-control" id="goodsname" type="text" name="goodsname" placeholder="请输入商品名...">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+      <div class="form-group">
+        <label for="price">价格</label>
+        <div class="input-group">
+          <div class="input-group-addon">￥</div>
+          <input class="form-control" id="price" type="text" name="price" placeholder="请输入商品价格...">
+          <div class="input-group-addon">.00</div>
+        </div>
+      </div>
+    </form><br>
+
+    <!-- 文本框 -->
+    <label>文本框</label>
+    <textarea class="form-control" rows="5" name="content"></textarea>
+
+    <!-- 复选框和单选框 -->
+    <div class="checkbox disabled">
+      <label>
+        <input type="checkbox" name="football" value="1" disabled>足球
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="pingpang" value="2">乒乓
+      </label>
+    </div>
+
+    <div class="checkbox">
+      <label class="checkbox-inline disabled">
+        <input type="checkbox" name="football" value="1" disabled>足球
+      </label>
+      <label  class="checkbox-inline">
+        <input type="checkbox" name="pingpang" value="2">乒乓
+      </label>
+    </div>
+
+
+    <div class="radio">
+      <label>
+        <input type="radio" name="sex" value="0">女
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="sex" value="1">男
+      </label>
+    </div>
+
+    <!-- 下拉列表 -->
+    <select class="form-control">
+      <option value="0">Item 0</option>
+      <option value="1">Item 1</option>
+      <option value="2">Item 2</option>
+      <option value="3">Item 3</option>
+    </select>
+
+    <!-- 表单校验状态 -->
+<pre>
+校验状态
+    类                 说明
+    .has-error        错误状态
+    .has-success      成功状态
+    .has-warning      警告状态  
+
+校验图标
+    类                       说明
+    .glyphicon-ok           成功状态图标
+    .glyphicon-warning-sign 警告状态图标
+    .glyphicon-remove       错误状态图标
+</pre>
+    
+    <!-- 控制尺寸 -->
+    <input class="form-control input-lg" type="text">
+    <input class="form-control input-sm" type="text">
+
+
+<!-- 图片 -->
+
+    <!-- 图片形状 -->
+    <img class="img-rounded" src="image/mv.jpg">
+    <img class="img-circle" src="image/mv.jpg">
+    <img class="img-thumbnail" src="image/mv.jpg">
+
+    <!-- 响应式图片 -->
+    <img class="img-responsive" src="image/mv.jpg">
+
+
+<pre>
+img类
+    类                   描述
+    .img-rounded      为图片添加圆角 (IE8 不支持)
+    .img-circle       将图片变为圆形 (IE8 不支持)
+    .img-thumbnail    缩略图功能
+    .img-responsive   图片响应式 (将很好地扩展到父元素)
+</pre>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
