@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap CSS —— 排版</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<!-- 标题(普通元素定义 class=(.h1 ~ h6)来实现相同的功能) -->
+    <h1>我是标题1 h1</h1>
+    <h2>我是标题2 h2</h2>
+    <h3>我是标题3 h3</h3>
+    <h4>我是标题4 h4</h4>
+    <h5>我是标题5 h5</h5>
+    <h6>我是标题6 h6</h6>
+
+    <!-- 内联子标题 -->
+    <h1>我是标题1 h1 <small>我是副标题1</small></h1>
+    <h2>我是标题2 h2 <small>我是副标题2</small></h2>
+    <h3>我是标题3 h3 <small>我是副标题3</small></h3>
+    <!-- class="lead" 强调文本，突出显示 -->
+    <h4 class="lead">我是标题4 h4 <small>我是副标题4</small></h4>
+    <h5>我是标题5 h5 <small>我是副标题5</small></h5>
+    <h6>我是标题6 h6 <small>我是副标题6</small></h6>
+
+    <!-- 其他文本强调 -->
+    <p class="text-left">向左对齐文本</p>
+    <p class="text-center">居中对齐文本</p>
+    <p class="text-right">向右对齐文本</p>
+    <p class="text-justify">两端对齐文本(支持不好)</p>
+    <p class="text-nowrap" style="border: 1px solid #f90; width: 35px;">文本不换行</p>
+    <p class="text-muted">本行内容是减弱的</p>
+    <p class="text-primary">强调文本</p>
+    <p class="text-success">强调文本</p>
+    <p class="text-info">强调文本</p>
+    <p class="text-warning">强调文本</p>
+    <p class="text-danger">强调文本</p>
+
+    <!-- 内联文本元素 -->
+    <p>Bootstrap<mark>框架</mark></p>
+
+    <!-- 各种加线条文本 -->
+    <p><del>删除文本</del></p>
+    <p><s>无用文本</s></p>
+    <p><ins>插入的文本</ins></p>
+    <p><u>下划线文本</u></p>
+
+    <!-- 英文文本大小写 -->
+    <p class="text-lowercase">Bootstrap转换为全小写</p>
+    <p class="text-uppercase">Bootstrap转换为全大写</p>
+    <p class="text-capitalize">bootstrap首字母大写</p>
+
+	<!-- 缩略语 -->
+	Bootstrap <abbr class="initialism" title="Bootstrap">框架</abbr>
+
+	<!-- 地址文本 -->
+	<address>
+		<strong>Twitter, Inc.</strong><br>
+		795 Folsom Ave, Suite 600<br>
+		San Francisco, CA 94107<br>
+		<abbr title="Telephone">Tel:</abbr> (123) 456-7890
+	</address>
+
+	<address>
+		<strong>Full Name</strong><br>
+		<a href="mailto:#">mailto@somedomain.com</a>
+	</address>
+
+	<!-- 引用文本 -->
+	<blockquote cite="http://example.com/facts">
+		<p>Bootstrap 框架</p>
+	</blockquote>
+
+	<blockquote class="blockquote-reverse" cite="http://example.com/facts">
+		<p>Bootstrap 框架</p>
+	</blockquote>
+
+	<blockquote class="pull-right">
+		这是一个向右对齐的引用。<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+	</blockquote>
+
+	<!-- 列表 -->
+	<h4>有序列表</h4>
+	<ol>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+	</ol>
+
+	<h4>无序列表</h4>
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+	</ul>
+
+	<h4>取消默认样式的无序列表</h4>
+	<ul class="list-unstyled">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+	</ul>
+
+	<h4>内联列表</h4>
+	<ul class="list-inline">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+	</ul>
+
+	<h4>描述列表</h4>
+	<dl>
+		<dt>Description 1</dt>
+		<dd>Item 1</dd>
+		<dt>Description 2</dt>
+		<dd>Item 2</dd>
+	</dl>
+
+	<h4>水平描述列表</h4>
+	<dl class="dl-horizontal">
+		<dt>Description 1</dt>
+		<dd>Item 1</dd>
+		<dt>Description 2</dt>
+		<dd>Item 2</dd>
+	</dl>
+
+	<!-- 内联代码 -->
+	<code>&lt;section&gt;</code><br>
+
+	<!-- 用户输入 -->
+	Press <kbd>Ctrl+,</kbd>
+	
+	<!-- 代码块 -->
+	<pre>
+		&lt;p&gt;Please input ... &lt;/p&gt;
+	</pre>
+
+<pre>
+更多排版类：
+	类						描述
+	.lead				使段落突出显示
+	.small				设定小文本 (设置为父文本的 85% 大小)
+	.text-left			设定文本左对齐
+	.text-center		设定文本居中对齐
+	.text-right			设定文本右对齐
+	.text-justify		设定文本对齐,段落中超出屏幕部分文字自动换行
+	.text-nowrap		段落中超出屏幕部分不换行
+	.text-lowercase		设定文本小写
+	.text-uppercase		设定文本大写
+	.text-capitalize	设定单词首字母大写
+	.initialism			显示在 abbr 元素中的文本以小号字体展示
+	.blockquote-reverse	设定引用右对齐
+	.list-unstyled		移除默认的列表样式，列表项中左对齐 ( ul 和 ol 中)。这个类仅适用于直接子列表项 (如果需要移除嵌套的列表项，你需要在嵌套的列表中使用该样式)
+	.list-inline		将所有列表项放置同一行
+	.dl-horizontal		该类设置了浮动和偏移，应用于 dl 元素和 dt 元素中，具体实现可以查看实例
+	.pre-scrollable		使 pre 元素可滚动 scrollable
+</pre>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
