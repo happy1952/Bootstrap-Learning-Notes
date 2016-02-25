@@ -18,11 +18,198 @@
     </style>
   </head>
   <body style="margin: 50px;">
+    <!-- 输入框组 -->
     <div class="input-group">
-      <span class="input-group-addon">@</span>
       <input class="form-control" type="text">
-    </div>
+      <span class="input-group-addon">@126.com</span>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input class="form-control" type="text">
+      <span class="input-group-addon">.00</span>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><input type="checkbox"></span>
+      <input class="form-control" type="text">
+    </div><br>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon"><input type="radio"></span>
+      <input class="form-control" type="text">
+    </div><br>
+
+    <div class="input-group">
+      <input class="form-control" type="text">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">搜索</button>
+      </span>
+    </div><br>
+
+    <div class="input-group">
+      <input class="form-control" type="text">
+      <span class="input-group-btn">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          下拉菜单
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">导航</li>
+          <li class="divider"></li>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">资讯</a></li>
+        </ul>
+      </span>
+    </div><br>
+
+    <!-- 导航组件 -->
+    <!-- 基本导航 -->
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">资讯</a></li>
+      <li><a href="#">课程</a></li>
+      <li class="disabled"><a href="#">关于</a></li>
+    </ul><br>
     
+    <!-- 胶囊式导航 -->
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">资讯</a></li>
+      <li><a href="#">课程</a></li>
+      <li><a href="#">关于</a></li>
+    </ul><br>
+    
+    <!-- 垂直胶囊式导航 -->
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">资讯</a></li>
+      <li><a href="#">课程</a></li>
+      <li><a href="#">关于</a></li>
+    </ul><br>
+
+    <!-- 两端对齐导航 -->
+    <ul class="nav nav-pills nav-justified">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">资讯</a></li>
+      <li><a href="#">课程</a></li>
+      <li><a href="#">关于</a></li>
+    </ul><br>
+
+    <!-- 带下拉菜单的导航 -->
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">咨询</a></li>
+      <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          课程
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">PHP</a></li>
+          <li><a href="#">Linux</a></li>
+        </ul>
+      </li>
+      <li><a href="#">关于</a></li>
+    </ul><br>
+    
+    <!-- 导航条组件 -->
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">网站标题</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </nav>
+
+    <!-- 反色调导航组件 -->
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">网站标题</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </nav>
+    
+    <!-- 导航条中使用表单 -->
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">网站主题</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" action="#" method="post">
+        <div class="input-group">
+          <input class="form-control" type="text" name="search" placeholder="请输入要查找的内容">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">搜索</button>
+          </span>
+        </div>
+      </form>
+    </nav>
+
+    <!-- 导航条中使用按钮 -->
+    <button class="btn btn-default navbar-btn navbar-right">按钮</button>
+
+    <!-- 导航条中使用文本 -->
+    <p class="navbar-text">文本</p>
+
+    <!-- 导航条中使用链接 -->
+    <a class="navbar-link" href="#">非导航链接</a>
+
+    <!-- 导航条固定到顶部 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">网站标题</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </nav>
+    
+    <!-- 导航条固定到底部 -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">网站标题</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </nav>
+
+    <!-- 静态导航条（取消了圆角） -->
+    <!-- <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">网站标题</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </nav> -->
+
+
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
