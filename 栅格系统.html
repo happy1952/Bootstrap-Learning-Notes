@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Bootstrap CSS —— 栅格系统</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -14,7 +14,7 @@
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-      .a{border: 1px solid #ccc;height: 35px;background: #eee;text-align: center;line-height: 35px;}
+      .a{border: 1px solid #ccc;height: 45px;background: #eee;text-align: center;line-height: 45px;}
     </style>
   </head>
   <body style="margin: 50px;">
@@ -66,7 +66,82 @@
       <div class="row">
         <div class="col-md-12 a">12</div>
       </div>
-    </div>
+    </div><br>
+
+    <!-- 激活四种屏幕分类 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 a">4</div>
+      </div>
+    </div><br>
+
+    <!-- 偏移列 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 a">8</div>
+        <div class="col-md-3 col-md-offset-1 a">3</div>
+      </div>
+    </div><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 a pull-right">8</div>
+        <div class="col-md-3 a pull-left">3</div>
+      </div>
+    </div><br>
+
+    <!-- 嵌套列 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 a">
+          <div class="col-md-8 a">9-8</div>
+          <div class="col-md-4 a">9-4</div>
+        </div>
+        <div class="col-md-3 a">3</div>
+      </div>
+    </div><br>
+
+    <!-- 交换列 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 a col-md-push-3">9</div>
+        <div class="col-md-3 a col-md-pull-9">3</div>
+      </div>
+    </div><br>
+
+<pre>
+              手机（< 768px）  平板电脑（≥768px）  台式电脑（≥992px）  大型设备（≥1200px）
+
+网格行为      一直是水平的        以折叠开始，         以折叠开始，       以折叠开始，
+                                断点以上是水平的     断点以上是水平的   断点以上是水平的
+
+最大容器宽度  None (auto)         750px                 970px               1170px
+
+Class 前缀    .col-xs-            .col-sm-              .col-md-            .col-lg-
+
+列数量和       12                12                    12                  12
+
+最大列宽        Auto              60px                   78px                95px
+
+间隙宽度        30px              30px                   30px                30px
+        （一个列的每边分别15px）（...分别 15px）    （...分别 15px）    （...分别 15px）
+
+可嵌套         Yes                 Yes                   Yes                 Yes
+
+偏移量         Yes                 Yes                   Yes                 Yes
+
+列排序         Yes                 Yes                   Yes                 Yes
+</pre>
     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
