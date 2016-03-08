@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 插件 —— 弹出框和警告框插件</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .a{border: 1px solid #ccc;height: 45px;background: #eee;text-align: center;line-height: 45px;}
+    </style>
+  </head>
+  <body style="margin: 50px;">
+    <!-- 弹出框(Popover)：与工具提示(tooltip)类似，提供了一个扩展视图 -->
+    <a id="mypopover" href="#" 
+                      data-original-title="Bootstrap" 
+                      data-toggle="popover" 
+                      data-content="Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。"
+                      data-trigger="hover"
+                      data-delay="500"
+    >
+      请点击我
+    </a>
+
+<pre>
+  相关属性：
+  属性名                     描述
+  data-animation      默认true，在popover上应用一个CSS fade动画。如果设置false，则不应用。
+  data-html           默认false， 不允许提示内容格式为html。 如果设置为true，则可以设置 html 格式的提示内容。
+  data-placement      默认值top，还有bottom、left、right和auto。如果auto会自行调整合适的位置，如果是auto left
+                      则会尽量在左边显示，但左边不行就靠右边。
+  data-selector       默认false，可以选择绑定指定的选择器。
+  data-original-title 默认空字符串，弹出框的标题。优先级比title低，title默认字空符串，弹出框的标题。
+  data-trigger        默认值click，表示怎么触发popover，其他值为：
+                      hover、 focus、 manual。 多个值用空格隔开， manual手动不能和其他同时设置。
+  data-delay          默认值0，延迟触发popover(毫秒)， 如果传数字则，表示show/hide的毫秒数，如果传对象，
+                      结构为：{show:500,hide:100}
+  data-container      默认值false，将popover附加到特定的元素上。比如组合按钮提示，容器不够，可以附加body上。
+                      container : 'body'
+  data-template       更改提示框的 HTML 提示语的模版，默认值为：
+                      &lt;div class="popover"&gt;
+                        &lt;div class="arrow"&gt;&lt;/div&gt;
+                        &lt;h3 class="popover-title"&gt;&lt;/h3&gt;
+                        &lt;div class="popover-content"&gt;&lt;/div&gt;
+                      &lt;/div&gt;
+  data-content        默认值为空，弹出框的内容。
+  data-viewport       设置外围容器的边际，具体代码看示例。
+
+
+  事件：
+  事件类型                  描述
+  show.bs.popover     在调用 show 方法时触发
+  shown.bs.popover    在显示整个弹窗时时触发
+  hide.bs.popover     在调用 hide 方法时触发
+  hidden.bs.popover   在完全关闭整个弹出时触发
+</pre>
+
+    <div id="view" style="width:200px; height:100px; border: 1px solid #f00;">
+      <button class="btn btn-primary" type="button" data-toggle="popover" data-original-title="HTML" data-content="超文本标记语言，标准通用标记语言下的一个应用。“超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。" data-trigger="hover focus">
+        弹出框
+      </button>
+    </div>
+
+    <!-- 警告框 -->
+    <div class="alert alert-warning fade in" id="alert"><!-- fade淡入淡出 -->
+      <!-- <button class="close" type="button" data-dismiss="alert"><span>&times;</span></button> -->
+      <button class="close" type="button"><span>&times;</span></button>
+      <p>警告：你的浏览器版本太低，请升级后再试！</p>
+    </div>
+
+<pre>
+  Alert事件：
+  事件类型                  描述
+  close.bs.alert      当 close 方法被调用后立即触发
+  closed.bs.alert     当警告框被完全关闭后立即触发
+</pre>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $("#mypopover").popover({
+        container : 'body',
+        placement : 'auto right',
+      });
+
+      $("#view button").popover({
+        viewport : '#view', //设置外围边际
+      });
+
+      //popover相关方法
+      // $("#mypopover").popover("show"); //显示
+      // $("#mypopover").popover("hide"); //隐藏
+      // $("#mypopover").popover("toggle");  //反转显示和隐藏
+      // $("#mypopover").popover("destroy"); //隐藏并销毁
+      
+      $("#mypopover").on("hide.bs.popover", function(){
+        alert("调用hide时触发！");
+      });
+
+      // 使用JS代替data-dismiss
+      $(".close").bind("click", function(){
+        $('#alert').alert('close');
+      });
+
+      $("#alert").bind("closed.bs.alert", function(){
+        alert("当closed方法被触发时调用！");
+      });
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 插件 —— 标签页和工具提示插件</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .a{border: 1px solid #ccc;height: 45px;background: #eee;text-align: center;line-height: 45px;}
+    </style>
+  </head>
+  <body style="margin: 50px;">
+    
+    <!-- 标签页(Tab) -->
+    <!-- <ul class="nav nav-tabs"> -->
+    <!-- 
+    <ul class="nav nav-pills"> 胶囊式 
+      <li class="active"><a href="#html5" data-toggle="tab">HTML5</a></li>
+      <li><a href="#bootstrap" data-toggle="tab">Bootstrap</a></li>
+      <li><a href="#jquery" data-toggle="tab">jQuery</a></li>
+      <li><a href="#extjs" data-toggle="tab">ExtJS</a></li>
+    </ul>
+    -->
+    <ul class="nav nav-pills" id="nav"> <!-- 胶囊式 -->
+      <li class="active"><a href="#html5">HTML5</a></li>
+      <li><a href="#bootstrap">Bootstrap</a></li>
+      <li><a href="#jquery">jQuery</a></li>
+      <li><a href="#extjs">ExtJS</a></li>
+    </ul>
+
+    <div class="tab-content" style="padding: 10px;">
+      <!-- fade淡入淡出，in表示首选的内容默认显示 -->
+      <div class="tab-pane active fade in" id="html5">HTML5</div>
+      <div class="tab-pane fade" id="bootstrap">Bootstrap</div>
+      <div class="tab-pane fade" id="jquery">jQuery</div>
+      <div class="tab-pane fade" id="extjs">ExtJS</div>
+    </div>
+
+<pre>
+    事件类型              描述
+    show.bs.tab       在调用 tab 方法时触发
+    shown.bs.tab      在显示整个标签时触发
+</pre>
+    
+    <!-- 工具提示 -->
+    <!-- 需要绑定一个JS -->
+    <a href="#" id="tooltiptest" title="<code>html</code>&nbsp;超文本标识符！" 
+                                 data-toggle="tooltip"
+                                 data-animation="false"
+                                 data-html="true"
+                                 data-placement="right"
+                                 data-trigger="hover foucs"
+                                 data-delay='1000'
+    >
+      HTML5
+    </a>
+    
+    <script>
+      // $("#identifier").tooltip('options');
+    </script>
+
+<pre>
+  相关属性：
+  属性名                             描述
+  data-animation        默认true，在tooltip上应用一个CSS fade动画。如果设置false，则不应用。
+  data-html             默认false，不允许提示内容格式为html。如果设置为true，则可以设置html格式的提示内容。
+  data-placement        默认值top，还有bottom、left、right和auto。如果auto会自行调整合适的位置，如果是auto 
+                        left则会尽量在左边显示，但左边不行就靠右边。
+  data-selector         默认false，可以选择绑定指定的选择器。
+  data-original-title   默认空字符串，提示语的内容。优先级比title低
+  title                 默认字空符串，提示语的内容。
+  data-trigger          默认值hover foucs，表示怎么触发tooltip，其他值为：click、manual。多个值用空格隔开，
+                        manual手动不能和其他同时设置。
+  data-delay            默认值0，延迟触发tooltip(毫秒)，如果传数字则，表示show/hide的毫秒数，如果传对象，
+                        结构为：{show:500,hide:100}
+  data-container        默认值 false，将 tooltip 附加到特定的元素上。比如组合按钮组提示，容器不够，可以附加
+                        body 上。container : 'body'
+  data-template         更改提示框的 HTML 提示语的模版，默认值为：
+                        &lt;div class='tooltip'&gt;
+                          &lt;div class='tooltip-arrow'&gt;&lt;/div&gt;
+                          &lt;div class='tooltip-inner'&gt;&lt;/div&gt;
+                        &lt;/div&gt;。
+
+  事件：
+  事件类型                          描述
+  show.bs.tooltip       在 show 方法调用时立即触发
+  shown.bs.tooltip      在提示框完全显示给用户之后触发
+  hide.bs.tooltip       在 hide 方法调用时立即触发
+  hidden.bs.tooltip     在提示框完全隐藏之后触发
+</pre>
+    
+    <section id="section">
+      <a href="#" data-toggle="tooltip" title="超文本标识符！">HTML</a>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      // 使用JS
+      $("#nav a").on("click", function(e){
+        e.preventDefault();
+        $(this).tab("show");
+      });
+
+      $("#nav a").on("show.bs.tab", function(){
+        alert("调用tab时触发！");
+      });
+
+      $("#nav a").on("shown.bs.tab", function(){
+        alert("显示完tab后触发！");
+      });
+
+      $("#tooltiptest").tooltip();
+
+      <!-- //JS方式：直接去掉前面的data即可。 -->
+      $("#section a").tooltip({
+        delay : {
+          show : 500,
+          hide : 500,
+        },
+        container : 'body',
+        placement : 'auto right',
+      });
+
+      //显示
+      // $("#section a").tooltip('show');
+
+      //隐藏
+      // $("#section a").tooltip('hide');
+
+      //反转显示加隐藏
+      // $("#section a").tooltip('toggle');
+      
+      //隐藏并销毁
+      // $("#section a").tooltip('destroy');
+      
+      $("#section a").on("hide.bs.tooltip", function(){
+        alert("调用hide时触发！");
+      }); 
+      
+    </script>
+  </body>
+</html>
