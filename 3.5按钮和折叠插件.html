@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 插件 —— 按钮和折叠插件</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .a{border: 1px solid #ccc;height: 45px;background: #eee;text-align: center;line-height: 45px;}
+    </style>
+  </head>
+  <body style="margin: 50px;">
+    <!-- 按钮(可以添加进一些交互，比如控制按钮状态或为其他组件创建按钮组。) -->
+
+    <!-- 单个切换 -->
+    <button class="btn btn-primary" type="button" data-toggle="button" autocomplete="off">单个切换</button>
+    <!-- 注：在Firefox多次页面加载时，按钮可能保持表单的禁用或选择状态。解决方法：autocomplete="off" -->
+
+    <!-- 单选按钮 -->
+    <div class="btn-group" data-toggle="buttons">
+      <label for="" class="btn btn-primary active">
+        <input type="radio" name="sex" value="0" autocomplete="off" checked>男
+      </label>
+      <label for="" class="btn btn-primary">
+        <input type="radio" name="sex" value="1" autocomplete="off">女
+      </label>
+    </div>
+
+    <!-- 复选按钮 -->
+    <div class="btn-group" data-toggle="buttons">
+      <label for="" class="btn btn-primary active">
+        <input type="checkbox" name="hobby" value="0" autocomplete="off" checked>音乐
+      </label>
+      <label for="" class="btn btn-primary">
+        <input type="checkbox" name="hobby" value="1" autocomplete="off">足球
+      </label>
+      <label for="" class="btn btn-primary">
+        <input type="checkbox" name="hobby" value="2" autocomplete="off">羽毛球
+      </label>
+      <label for="" class="btn btn-primary">
+        <input type="checkbox" name="hobby" value="3" autocomplete="off">读书
+      </label>
+    </div>
+
+    <!-- 加载状态 -->
+    <button class="btn btn-primary" id="myButton" type="button" data-loading-text="Loading..." autocomplete="off">点击提交</button>
+
+<pre>
+  方法：
+
+  方法                          描述                实例
+  button('toggle')        切换按压状态。赋予按钮被激活的外观。您可以使用 data-toggle 属性启用按钮的自动切换。  
+                                                $().button('toggle')
+  .button('loading')      当加载时，按钮是禁用的，且文本变为 button 元素的 data-loading-text 属性的值。  
+                                                $().button('loading')
+  .button('reset')        重置按钮状态，文本内容恢复为最初的内容。当您想要把按钮返回为原始的状态时，该方法非常有用。 
+                                                $().button('reset')
+  .button(string)         该方法中的字符串是指由用户声明的任何字符串。使用该方法，重置按钮状态，并添加新的内容。 
+                                                $().button(string)
+</pre>
+
+    <!-- 折叠 -->
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#content">点击折叠</button>
+    
+    <!-- <div id="content" class="collapse"> 默认隐藏-->
+    <div id="content" class="collapse in">
+      <div class="well">
+        Bootstrap是Twitter推出的一个用于前端开发的开源工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发,是一个CSS/HTML框架。目前,Bootstrap 最新版本为 3.0 。
+      </div>
+    </div>
+
+    <!-- 手风琴折叠 -->
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">点击我进行展示，再点击我进行折叠，第一部分</a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            这里是第一部分。
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">点击我进行展示，再点击我进行折叠，第二部分</a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            这里是第二部分。
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a href="#collapseThree" data-toggle="collapse" data-parent="#accordion">点击我进行展示，再点击我进行折叠，第三部分</a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            这里是第三部分。
+          </div>
+        </div>
+      </div>
+    </div>
+
+<pre>
+  
+  属性名称                  描述
+  data-parent     默认值为false，设置需指定父元素选择器。也就是说，选定其中一个折叠区，其他折叠将隐藏，实现手风琴效果。
+  
+  data-toggle     如果前面加 data-*，设置'collapse'表示实现折叠；如果是JavaScript中的属性，默认为true，实现反转。
+
+  事件：
+  事件类型                  描述
+  show.bs.collapse    在 show 方法调用时立即触发
+  shown.bs.collapse   折叠区完全显示出来是触发
+  hide.bs.collapse    在 hide 方法调用时触发
+  hidden.bs.collapse  该事件在折叠区域完全隐藏之后触发
+
+</pre>    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $("#myButton").click(function(){
+          var btn = $(this).button('loading');
+          setTimeout(function(){
+            btn.button('reset');
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
